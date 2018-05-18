@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PDFConvertorViewController" customModule="LawyerApp" customModuleProvider="target">
+            <connections>
+                <outlet property="btnCapture" destination="gbx-tc-Igz" id="zJW-eh-idb"/>
+                <outlet property="btnConvertPDF" destination="w4a-xe-pQS" id="vES-Kk-x8L"/>
+                <outlet property="btnFlash" destination="Khy-4S-oIh" id="lVS-FN-lbA"/>
+                <outlet property="imagesCollectionView" destination="euL-mV-0TG" id="mVF-ra-lVS"/>
+                <outlet property="masterCameraView" destination="Jp1-Mr-gl9" id="4P5-aN-a7f"/>
+                <outlet property="view" destination="iN0-l3-epB" id="HVg-kh-uuu"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jp1-Mr-gl9" customClass="MasterCameraView" customModule="LawyerApp" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GhB-sN-vrV">
+                    <rect key="frame" x="10" y="30" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="qHC-z8-LBN"/>
+                        <constraint firstAttribute="width" constant="30" id="xcG-Z4-BhZ"/>
+                    </constraints>
+                    <state key="normal" image="MasterCloseButton"/>
+                    <connections>
+                        <action selector="btnCancelAction:" destination="-1" eventType="touchUpInside" id="rpa-xc-dqF"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sdH-uA-dVL">
+                    <rect key="frame" x="0.0" y="447" width="375" height="220"/>
+                    <subviews>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="euL-mV-0TG">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="100" id="Oht-yG-0Af"/>
+                            </constraints>
+                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="5" minimumInteritemSpacing="5" id="Qm3-Ou-hA9">
+                                <size key="itemSize" width="80" height="80"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="k3q-BG-xj7"/>
+                                <outlet property="delegate" destination="-1" id="Uo2-oe-Xsu"/>
+                            </connections>
+                        </collectionView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbx-tc-Igz">
+                            <rect key="frame" x="157" y="120" width="60" height="60"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="60" id="Rqu-6H-8qN"/>
+                                <constraint firstAttribute="height" constant="60" id="tQo-Xp-x8e"/>
+                            </constraints>
+                            <state key="normal" image="capture"/>
+                            <connections>
+                                <action selector="btnCaptureAction:" destination="-1" eventType="touchUpInside" id="woa-iE-koi"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Khy-4S-oIh">
+                            <rect key="frame" x="67" y="130" width="40" height="40"/>
+                            <state key="normal" image="flashoff"/>
+                            <connections>
+                                <action selector="btnFlashAction:" destination="-1" eventType="touchUpInside" id="ac2-C8-ek4"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w4a-xe-pQS">
+                            <rect key="frame" x="267" y="130" width="40" height="40"/>
+                            <state key="normal" image="downloadDocument"/>
+                            <connections>
+                                <action selector="btnConvertPDFAction:" destination="-1" eventType="touchUpInside" id="kOD-E9-72B"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="euL-mV-0TG" firstAttribute="top" secondItem="sdH-uA-dVL" secondAttribute="top" id="BxM-gl-ITH"/>
+                        <constraint firstItem="euL-mV-0TG" firstAttribute="leading" secondItem="sdH-uA-dVL" secondAttribute="leading" id="GCu-MW-JGe"/>
+                        <constraint firstItem="w4a-xe-pQS" firstAttribute="centerY" secondItem="gbx-tc-Igz" secondAttribute="centerY" id="Ike-Wk-6Mf"/>
+                        <constraint firstAttribute="trailing" secondItem="euL-mV-0TG" secondAttribute="trailing" id="N3Q-bk-fFL"/>
+                        <constraint firstItem="w4a-xe-pQS" firstAttribute="leading" secondItem="gbx-tc-Igz" secondAttribute="trailing" constant="50" id="Nwb-Fz-aVE"/>
+                        <constraint firstAttribute="height" constant="220" id="S60-N7-TpI"/>
+                        <constraint firstItem="gbx-tc-Igz" firstAttribute="top" secondItem="euL-mV-0TG" secondAttribute="bottom" constant="20" id="TGZ-8G-efi"/>
+                        <constraint firstItem="gbx-tc-Igz" firstAttribute="leading" secondItem="Khy-4S-oIh" secondAttribute="trailing" constant="50" id="c5G-0l-s12"/>
+                        <constraint firstItem="gbx-tc-Igz" firstAttribute="centerX" secondItem="sdH-uA-dVL" secondAttribute="centerX" id="gvs-Br-HGZ"/>
+                        <constraint firstItem="Khy-4S-oIh" firstAttribute="centerY" secondItem="gbx-tc-Igz" secondAttribute="centerY" id="pPM-ss-l9F"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="sdH-uA-dVL" secondAttribute="bottom" id="0kY-rc-bOD"/>
+                <constraint firstAttribute="trailing" secondItem="sdH-uA-dVL" secondAttribute="trailing" id="GAQ-yK-OXZ"/>
+                <constraint firstItem="sdH-uA-dVL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Gc0-AG-u0z"/>
+                <constraint firstAttribute="bottom" secondItem="Jp1-Mr-gl9" secondAttribute="bottom" id="VsK-CS-d6P"/>
+                <constraint firstItem="Jp1-Mr-gl9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="WS3-pJ-d5X"/>
+                <constraint firstItem="GhB-sN-vrV" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="ZhJ-no-vsg"/>
+                <constraint firstItem="GhB-sN-vrV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="30" id="kWx-H4-HDV"/>
+                <constraint firstAttribute="trailing" secondItem="Jp1-Mr-gl9" secondAttribute="trailing" id="q3L-x5-Xel"/>
+                <constraint firstItem="Jp1-Mr-gl9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="yGX-G3-gy7"/>
+            </constraints>
+            <point key="canvasLocation" x="25.5" y="51.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="MasterCloseButton" width="40" height="40"/>
+        <image name="capture" width="100" height="100"/>
+        <image name="downloadDocument" width="40" height="40"/>
+        <image name="flashoff" width="40" height="40"/>
+    </resources>
+</document>

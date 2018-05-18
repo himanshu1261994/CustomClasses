@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DropBoxContentViewController" customModule="LawyerApp" customModuleProvider="target">
+            <connections>
+                <outlet property="activityIndicator" destination="cdf-ff-Bmh" id="n1i-VS-KyX"/>
+                <outlet property="btnBack" destination="t3f-c9-TxS" id="jF4-1R-tZ9"/>
+                <outlet property="dbDataTableView" destination="r4E-xo-db7" id="D9t-p6-NIM"/>
+                <outlet property="uploadView" destination="lJu-hQ-jT9" id="nhz-XR-SAh"/>
+                <outlet property="view" destination="iN0-l3-epB" id="J3y-D3-LYN"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gw4-59-isF">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
+                    <subviews>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t3f-c9-TxS">
+                            <rect key="frame" x="15" y="35" width="40" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <state key="normal" title="Back"/>
+                            <connections>
+                                <action selector="btnBackAction:" destination="-1" eventType="touchUpInside" id="itb-HT-U6H"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9f1-RX-U0H">
+                            <rect key="frame" x="304" y="35" width="56" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <state key="normal" title="Cancel"/>
+                            <connections>
+                                <action selector="btnCancelAction:" destination="-1" eventType="touchUpInside" id="UCh-hO-u8F"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DropBox" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9x8-8U-WaF">
+                            <rect key="frame" x="146.5" y="40.5" width="83" height="24"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="cdf-ff-Bmh">
+                            <rect key="frame" x="116.5" y="42" width="20" height="20"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.96854275469999995" green="0.96868163350000003" blue="0.96851247549999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="9x8-8U-WaF" firstAttribute="centerY" secondItem="9f1-RX-U0H" secondAttribute="centerY" id="1y0-vu-WLs"/>
+                        <constraint firstAttribute="height" constant="84" id="Hl5-8B-qNb"/>
+                        <constraint firstAttribute="trailing" secondItem="9f1-RX-U0H" secondAttribute="trailing" constant="15" id="LG9-tK-yw5"/>
+                        <constraint firstItem="cdf-ff-Bmh" firstAttribute="centerY" secondItem="9x8-8U-WaF" secondAttribute="centerY" id="M7b-Pb-U6W"/>
+                        <constraint firstAttribute="bottom" secondItem="9f1-RX-U0H" secondAttribute="bottom" constant="15" id="NF6-qP-qWn"/>
+                        <constraint firstItem="9x8-8U-WaF" firstAttribute="leading" secondItem="cdf-ff-Bmh" secondAttribute="trailing" constant="10" id="S0f-fC-KT8"/>
+                        <constraint firstItem="9x8-8U-WaF" firstAttribute="centerX" secondItem="gw4-59-isF" secondAttribute="centerX" id="Us3-kf-QzN"/>
+                        <constraint firstItem="t3f-c9-TxS" firstAttribute="leading" secondItem="gw4-59-isF" secondAttribute="leading" constant="15" id="iCO-8s-M0R"/>
+                        <constraint firstAttribute="bottom" secondItem="t3f-c9-TxS" secondAttribute="bottom" constant="15" id="u2x-mo-IWW"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="r4E-xo-db7">
+                    <rect key="frame" x="0.0" y="84" width="375" height="533"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="vWx-GD-7d9"/>
+                        <outlet property="delegate" destination="-1" id="kx5-3v-qpG"/>
+                    </connections>
+                </tableView>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lJu-hQ-jT9">
+                    <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ve-Kh-rwt">
+                            <rect key="frame" x="116" y="15" width="142" height="20"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="10" maxY="0.0"/>
+                            <state key="normal" title="UPLOAD HERE" image="MasterDocumentUpload">
+                                <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="btnUploadAction:" destination="-1" eventType="touchUpInside" id="vs8-M6-FKa"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="1Ve-Kh-rwt" firstAttribute="centerY" secondItem="lJu-hQ-jT9" secondAttribute="centerY" id="C7o-r9-laO"/>
+                        <constraint firstItem="1Ve-Kh-rwt" firstAttribute="centerX" secondItem="lJu-hQ-jT9" secondAttribute="centerX" id="tGR-9J-gVb"/>
+                        <constraint firstAttribute="height" constant="50" id="tvc-6r-V4u"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="gw4-59-isF" secondAttribute="trailing" id="1DR-ql-lsQ"/>
+                <constraint firstItem="lJu-hQ-jT9" firstAttribute="top" secondItem="r4E-xo-db7" secondAttribute="bottom" id="3xH-cl-vDT"/>
+                <constraint firstItem="r4E-xo-db7" firstAttribute="top" secondItem="gw4-59-isF" secondAttribute="bottom" id="C5s-Z7-pYB"/>
+                <constraint firstItem="gw4-59-isF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Fle-Kn-caM"/>
+                <constraint firstItem="r4E-xo-db7" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Hdf-1u-3dI"/>
+                <constraint firstAttribute="bottom" secondItem="lJu-hQ-jT9" secondAttribute="bottom" id="Log-CV-ZJ0"/>
+                <constraint firstAttribute="trailing" secondItem="r4E-xo-db7" secondAttribute="trailing" id="ZhR-vj-vs5"/>
+                <constraint firstItem="lJu-hQ-jT9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="blh-Sh-192"/>
+                <constraint firstAttribute="trailing" secondItem="lJu-hQ-jT9" secondAttribute="trailing" id="oAc-dg-Lqy"/>
+                <constraint firstItem="gw4-59-isF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="qHl-pL-QzS"/>
+            </constraints>
+            <point key="canvasLocation" x="-59.5" y="9.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="MasterDocumentUpload" width="20" height="20"/>
+    </resources>
+</document>
